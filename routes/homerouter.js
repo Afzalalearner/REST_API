@@ -1,14 +1,9 @@
 const express=require('express');
 const router=express.Router();
+const homecntlr=require('./../controllers/homectrlr')
 
-router.get('/',(req,res)=>{
-    res.status(200)
-    res.send('Welcome to Home Page...')
-})
+router.get('/',homecntlr.home)
 
-router.get('/health',(req,res)=>{
-    res.status(200);
-    res.json({status:'up'})
-})
+router.get('/health',homecntlr.health)
 
 module.exports=router;
